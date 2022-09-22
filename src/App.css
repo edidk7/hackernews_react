@@ -1,38 +1,202 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Roboto:wght@100;400;700&display=swap');
+
+body {
+  background-color: #f7f7f7;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.section__hacknews .container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.section__hacknews nav{
+  padding: 2.75rem 0 3.625rem 0;
+  box-shadow: 0 1px 4px 0 rgba(0, 21, 41, 0.12);
+  background-image: linear-gradient(to bottom, #ececec -32%, #fff 124%);
+  margin-bottom: 5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.section__hacknews nav a.brand-logo{
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.75rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  color: #3b3b3b;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.section__hacknews .news-card {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  padding: 1.6rem 1.6rem;
+  height: 5.625rem;
+  opacity: 0.8;
+  border-radius: 6px;
+  border: solid 1px #979797;
+  background-color: #fff;
+  position: relative;
+  margin-bottom: 1.875rem;
+}
+
+.section__hacknews .news-card:hover {
+  opacity: 0.5;
+}
+
+.section__hacknews .news-card p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.688rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #767676;
+}
+
+.section__hacknews .content-news{
+  width: 200px;
+}
+
+.section__hacknews .news-card a {
+  text-decoration: none;
+}
+
+.section__hacknews .news-card h3.title__news {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: 0.25px;
+  margin: 0;
+  color: #606060;
+}
+
+.section__hacknews .news-card a.active{
+  color: #606060;
+}
+
+.section__hacknews .news-card a.hover{
+  text-decoration: underline;
+}
+
+.section__hacknews .content-author {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.section__hacknews .ico-time {
+  margin-right: 0.5rem;
+  color: #6b6b6b;
+}
+
+.section__hacknews .favorite {
+  background-color: #97979721;
+  width: 3.25rem;
+  height: 141px;
+  position: absolute;
+  border-radius: 0px 4px 4px 0px;
+  right: 0px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.section__hacknews .favorite .ico-heart {
+  color: red;
+  opacity: 1;
+  transition: 1s ease-in-out;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
   }
-  to {
-    transform: rotate(360deg);
+
+  50% {
+    transform: scale(1.25);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.section__hacknews .ico-heart:hover {
+  animation: heartbeat 1s infinite;
+  fill: red;
+  color: red;
+  opacity: 1;
+  transition: opacity 500ms;
+}
+
+@media only screen and (min-width: 321px) {
+  
+  .section__hacknews .favorite {
+    width: 5.25rem;
+  }
+}
+
+@media only screen and (min-width: 568px) {
+  .section__hacknews .content-news{
+    width: 390px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .section__hacknews .content-news{
+    width: auto;
+  }
+  .section__hacknews .favorite {
+    width: 6.25rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  
+  .section__hacknews .news-container {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 1.87rem;
+  }
+
+  .section__hacknews .content-news{
+    width: 320px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  
+  .section__hacknews .container {
+    width: 100%;
+    max-width: 960px;
+    margin: auto;
+  }
+}
+
+
+@media only screen and (min-width: 1200px) {
+  
+  .section__hacknews .container {
+    max-width: 1140px;
+  }
+
+  .section__hacknews .content-news{
+    width: 400px;
   }
 }
