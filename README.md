@@ -2,6 +2,11 @@
 
 list of hacking news cards in React + Axios
 
+Demo
+----------
+
+https://hackernews-react-dd.netlify.app/
+
 Quick Start
 ----------
 
