@@ -4,11 +4,13 @@ import NewsCard from "./components/NewsCard";
 import ReactPaginate from 'react-paginate';
 
 
-const NewsPage = () => {
-    const [currentPage, setCurrentPage] = useState();
+const NewsPage = ({selectValue}) => {
+    const [currentPage, setCurrentPage] = useState(0);
     const [articles, setArticles] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [totalPages, setTotalPages] = useState(0);
+
+    const selectFront = selectValue;
 
     const handlePageChange = event => {
         console.log(event);
@@ -19,14 +21,15 @@ const NewsPage = () => {
         setIsLoading(true);
         const fetchData = async () => {
             try{
-                const { data } = await axios.get("https://hn.algolia.com/api/v1/search_by_date?query=react&page=0",
+                const url = `https://hn.algolia.com/api/v1/search_by_date?query=${selectFront}&hitsPerPage=8&page=${currentPage}`;
+
+                const { data } = await axios.get(url,
                 {
                     params: {page: currentPage},
                 }
                 );
-                console.log(data);
+                console.log(url);
                 const { hits, nbPages } = data;
-                console.log(data);
                 setArticles(hits);
                 setTotalPages(nbPages); 
             }catch (e){
@@ -37,7 +40,7 @@ const NewsPage = () => {
 
         };
         fetchData();
-    }, [currentPage])
+    }, [currentPage, selectFront])
 
     return(
         <div className="news-container">

@@ -197,6 +197,15 @@ body {
   color: #fff;
 }
 
+.section__hacknews .select__front{
+  width: 15rem;
+  height: 2rem;
+  padding: 0.313rem 0.75rem 0.313rem 0.75rem;
+  border-radius: 4px;
+  border: solid 1px #2e2e2e;
+  background-color: #fff;
+}
+
 @media only screen and (min-width: 321px) {
   
   .section__hacknews .favorite {

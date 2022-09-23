@@ -1,7 +1,7 @@
 import './App.css';
 import NewsPage from './NewsPage';
 import Header from './components/Header';
-
+import Select from './components/SelectFront';
 
 
 const App = () => {
@@ -9,7 +9,8 @@ const App = () => {
     <div className="section__hacknews">
       <Header titulo='Hacker News'/>
       <div className="container">
-        <NewsPage />    
+        <Select />
+        <NewsPage selectFront={"angular"}/>    
       </div>
     </div>
   )
