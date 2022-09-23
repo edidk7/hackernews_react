@@ -3,6 +3,7 @@ import NewsPage from './NewsPage';
 import Header from './components/Header';
 
 
+
 const App = () => {
   return (
     <div className="section__hacknews">

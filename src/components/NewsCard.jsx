@@ -1,10 +1,14 @@
 import { FiClock, FiHeart } from 'react-icons/fi';
+import moment from 'moment';
 
 const favNews = () => {
   console.log("a fav");
 }
 
 const NewsCard = ({article}) => {
+  
+const timeago = moment(article.created_at).fromNow();
+
   if(!article.story_title) return null;
   return (
     <div className='news-card'>
@@ -12,8 +16,8 @@ const NewsCard = ({article}) => {
             <a href={article.story_url} target='_blank' rel='noreferrer'> 
               <div className="content-author">
                   <FiClock className="ico-time" />
-                  <p>{article.created_at}</p>
-                  <p>{article.author}</p>
+                  <p>{timeago}</p>
+                  <p><span>by</span> {article.author}</p>
               </div>
               <h3 className='title__news'>{article.story_title}</h3>
             </a>
