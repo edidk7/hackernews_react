@@ -15,7 +15,7 @@ body {
   padding: 2.75rem 0 3.625rem 0;
   box-shadow: 0 1px 4px 0 rgba(0, 21, 41, 0.12);
   background-image: linear-gradient(to bottom, #ececec -32%, #fff 124%);
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
 }
 
 .section__hacknews nav a.brand-logo{
@@ -36,7 +36,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1.6rem 1.6rem;
-  height: 5.625rem;
+  height: 4.625rem;
   opacity: 0.8;
   border-radius: 6px;
   border: solid 1px #979797;
@@ -108,7 +108,7 @@ body {
 .section__hacknews .favorite {
   background-color: #97979721;
   width: 3.25rem;
-  height: 141px;
+  height: 125px;
   position: absolute;
   border-radius: 0px 4px 4px 0px;
   right: 0px;
