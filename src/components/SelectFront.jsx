@@ -2,7 +2,7 @@ import React from 'react'
 import NewsPage from '../NewsPage';
  
 const options = [
-    { value: 0, label: 'Select your news' },
+    { label: 'Select your news' },
     { value: 'angular', label: 'Angular' },
     { value: 'react', label: 'React' },
     { value: 'vue', label: 'Vue' }
@@ -31,7 +31,7 @@ class SelectFront extends React.Component {
         <div className="select-container">
           <select className='select__front' value={this.state.front} onChange={this.handleChange} >
             {options.map((option) => (
-              <option key={option.value} value={option.value} >{option.label}</option>
+              <option key={option.id} value={option.value} >{option.label}</option>
             ))}
           </select>
         </div>

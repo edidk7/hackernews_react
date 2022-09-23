@@ -32,7 +32,6 @@ const NewsPage = ({selectValue}) => {
                     params: {page: currentPage},
                 }
                 );
-                console.log(url);
                 const { hits, nbPages } = data;
                 setArticles(hits);
                 setTotalPages(nbPages); 
@@ -45,7 +44,25 @@ const NewsPage = ({selectValue}) => {
         };
         fetchData();
     }, [currentPage, selectFront])
- 
+
+    console.log({articles})
+
+    
+    let articlesIniciales = JSON.parse( localStorage.getItem('articles'));
+    if(!articlesIniciales){
+        articlesIniciales = [];
+    }
+
+    useEffect( () => {
+        let articlesIniciales = JSON.parse( localStorage.getItem('articles'));
+
+        if(articlesIniciales){
+            localStorage.setItem('articles', JSON.stringify(articles))
+        }else{
+            localStorage.setItem('articles', JSON.stringify([]));
+        }
+    });
+
     return(
         <div className="news-container">
             { isLoading ? (
