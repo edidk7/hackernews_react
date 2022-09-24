@@ -16,7 +16,6 @@ const NewsPage = ({selectValue}) => {
  
  
     const handlePageChange = event => {
-        console.log(event);
         setCurrentPage(event.selected);
     }
  
@@ -36,7 +35,6 @@ const NewsPage = ({selectValue}) => {
                 setArticles(hits);
                 setTotalPages(nbPages); 
             }catch (e){
-                console.log(e);
             } finally{
                 setIsLoading(false);
             }
@@ -45,21 +43,20 @@ const NewsPage = ({selectValue}) => {
         fetchData();
     }, [currentPage, selectFront])
 
-    console.log({articles})
 
-    
+    // Articles in local storage
     let articlesIniciales = JSON.parse( localStorage.getItem('articles'));
     if(!articlesIniciales){
         articlesIniciales = [];
     }
-
+    
     useEffect( () => {
         let articlesIniciales = JSON.parse( localStorage.getItem('articles'));
 
         if(articlesIniciales){
-            localStorage.setItem('articles', JSON.stringify(articles))
+        localStorage.setItem('articles', JSON.stringify(articles))
         }else{
-            localStorage.setItem('articles', JSON.stringify([]));
+        localStorage.setItem('articles', JSON.stringify([]));
         }
     });
 

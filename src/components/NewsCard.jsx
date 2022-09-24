@@ -1,8 +1,7 @@
 import { FiClock, FiHeart } from 'react-icons/fi';
 import moment from 'moment';
 
-const favNews = () => {
-  console.log("a fav");
+const favNews = ({article}) => {
 }
 
 const NewsCard = ({article}) => {
@@ -23,7 +22,7 @@ const timeago = moment(article.created_at).fromNow();
             </a>
         </div>
         <div className="favorite">
-            <FiHeart className="ico-heart" onClick={favNews} />
+            <FiHeart className="ico-heart" onClick={favNews(article)} />
         </div>
     </div>
   )

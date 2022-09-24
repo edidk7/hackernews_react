@@ -20,7 +20,6 @@ class SelectFront extends React.Component {
   }
  
   handleChange(e) {
-    console.log("front Selected: " + e.target.value);
     this.setState({ front: e.target.value });
  
   }

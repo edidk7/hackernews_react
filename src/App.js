@@ -1,7 +1,8 @@
+import React from 'react';
 import './App.css';
 import Header from './components/Header';
+import Tab from './components/Tab';
 import Select from './components/SelectFront';
-import React from 'react';
  
 class App extends React.Component {
   constructor(props) {
@@ -9,10 +10,7 @@ class App extends React.Component {
     this.state = {
       front: "Select your news",
     };
- 
-   console.log("APP: " + this.state.front)
- 
- 
+
   }
  
   render() {
@@ -20,6 +18,7 @@ class App extends React.Component {
       <div className="section__hacknews">
         <Header titulo='Hacker News' />
         <div className="container">
+          <Tab />
           <Select selectValue={this.state.front} />
         </div>
       </div>
